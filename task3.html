@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const colleagues = [
+            {
+                name: "Asad",
+                email: "asad@gmail.com",
+                dob: "1998-06-10",
+                experience: 2,
+                department: "Engineering",
+                joiningDate: "2023-9-9"
+            },
+            {
+                name: "Usama",
+                email: "usama@.com",
+                dob: "1976-08-22",
+                experience: 3,
+                department: "Marketing",
+                joiningDate: "2022-8-19"
+            },
+        ];
+
+        colleagues.sort((a, b) => {
+            console.log("A is ", a);
+            console.log("B is ", b);
+            const sorted = b.experience - a.experience
+            console.log("this is main sort", sorted);
+            return sorted
+
+        }
+        );
+
+        colleagues.forEach((colleague) => {
+            console.log(`${colleague.name}: ${colleague.experience} years`);
+        });
+
+        const filteredColleagues = colleagues.filter((colleague) => {
+            console.log("this is collegue after sort ", colleague);
+            return colleague.experience <= 2
+        }
+        );
+        console.log(filteredColleagues);
+
+    </script>
+</body>
+
+</html>

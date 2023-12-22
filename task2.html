@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // my steps to solve this 
+    // step 1: find occurrence using loop and condition
+    // step 2: occurrence ko dekhty howe repeating aur non repeat seperate krne
+    // step 3: sort krna array ko
+    const disp = (arr) => {
+      const c = {};
+      arr.forEach((num) => {
+        console.log("c num is ", c[num]);
+        c[num] = (c[num] || 0) + 1;
+      });
+      console.log("occurrence is ", c);
+
+      const repeatingNumbers = [];
+      const nonRepeatingNumbers = [];
+
+      for (const num in c) {
+        console.log("this occurences", c[num]);
+        console.log("this is numbers array ", num);
+        if (c[num] > 1) {
+          repeatingNumbers.push(num);
+        } else {
+          nonRepeatingNumbers.push(num);
+        }
+      }
+      const sortedArray = arr.sort();
+
+      console.log(`repeating nums ${repeatingNumbers}`);
+      console.log(`non-repeating nums ${nonRepeatingNumbers}`);
+      console.log(`sort array ${sortedArray}`);
+    }
+
+    const arr = [4, 5, 6, 7, 4, 5, 9, 0, 1, 2, 3, 4, 56, 7, 8, 9];
+    disp(arr);
+
+
+
+  </script>
+</body>
+
+</html>
